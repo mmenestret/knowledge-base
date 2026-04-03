@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 -c \"import json; print(json.dumps({'systemMessage': 'Knowledge Base — Commandes disponibles:\\n\\n/compiler [fichier] — Compile les sources pending en articles wiki\\n/indexer <url> — Fetch une URL et compile le contenu\\n/demander <question> — Recherche et repond depuis le wiki\\n/verifier — Audit de coherence + suggestions'}))\"",
+            "once": true
+          }
+        ]
+      }
+    ]
+  }
+}

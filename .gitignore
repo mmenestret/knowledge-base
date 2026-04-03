@@ -1,0 +1,8 @@
+.DS_Store
+.obsidian/
+raw/pending/*
+raw/indexed/*
+wiki/*.md
+!wiki/_index.md
+outputs/*
+!**/.gitkeep
