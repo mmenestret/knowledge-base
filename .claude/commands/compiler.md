@@ -39,10 +39,6 @@ $ARGUMENTS
    f. Mets a jour `wiki/_index.md` si necessaire.
    g. Deplace l'output de `outputs/pending/` vers `outputs/indexed/`.
 
-### Finalisation
-
-7. Commit git avec un message descriptif listant les articles crees/modifies.
-
 ## Regles
 
 - Synthetiser, jamais copier-coller.
@@ -51,3 +47,4 @@ $ARGUMENTS
 - Toujours tracer les sources brutes dans le front-matter `sources:`.
 - Ne jamais tracer les outputs dans `sources:` — ce sont des derives, pas des sources primaires. Cela evite les chaines circulaires.
 - Le champ `type` est un de : `concept`, `technique`, `reference`.
+- Ne jamais `git add` ou commiter les fichiers personnels (`raw/`, `wiki/`, `outputs/`). Git sert au projet (skills, config, AGENTS.md), pas au contenu de la knowledge base.
