@@ -5,7 +5,8 @@
 raw/pending/*
 raw/indexed/*
 wiki/*.md
-outputs/*
+outputs/pending/*
+outputs/indexed/*
 docs/
 
 # Keep directory structure
