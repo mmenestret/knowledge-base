@@ -33,7 +33,7 @@ $ARGUMENTS
 6. Pour chaque output :
    a. Lis le contenu de l'output.
    b. Lis les articles wiki existants qui couvrent le meme sujet.
-   c. **Extraction minimale** : les outputs sont deja des derives LLM — le risque de dilution par re-synthese est eleve. Ne toucher aux articles wiki que si l'output apporte une information factuellement nouvelle (connexion inedite entre concepts, fait absent du wiki). Ne pas integrer des reformulations, reorganisations ou syntheses de ce qui existe deja, meme si elles semblent "meilleures". En cas de doute, ne pas integrer.
+   c. **Integration legere** : les outputs sont deja synthetises par `/demander`. Si le contenu est pertinent, l'integrer dans les articles wiki sans re-resumer ni re-compresser — le texte a deja ete digere une fois, le re-machonner dilue l'information. Privilegier l'insertion directe des passages pertinents plutot que la re-synthese.
    d. Si de nouveaux concepts emergent : cree un article (sans ajouter l'output dans `sources:` — les outputs ne sont pas des sources primaires).
    e. Mets a jour la section `## Related` des articles lies si de nouvelles connexions sont identifiees.
    f. Mets a jour `wiki/_index.md` si necessaire.
