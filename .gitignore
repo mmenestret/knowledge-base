@@ -1,8 +1,13 @@
 .DS_Store
 .obsidian/
+
+# Personal content
 raw/pending/*
 raw/indexed/*
 wiki/*.md
 !wiki/_index.md
 outputs/*
+docs/
+
+# Keep directory structure
 !**/.gitkeep
