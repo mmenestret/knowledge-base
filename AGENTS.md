@@ -4,9 +4,9 @@ Ne jamais modifier le contenu d'un fichier dans `raw/`. Seulement deplacer de `p
 
 ## Commandes
 
-- `/compiler [fichier]` — Compile les sources pending en articles wiki. Sans argument, traite tout `raw/pending/`.
+- `/compiler [fichier]` — Compile les sources pending et les outputs en articles wiki. Sans argument, traite `raw/pending/` puis `outputs/pending/`.
 - `/indexer <url>` — Fetch une URL, sauve en markdown dans `raw/pending/`, puis compile.
-- `/demander <question>` — Repond en cherchant dans le wiki puis dans les sources.
+- `/demander <question>` — Repond en cherchant dans le wiki puis dans les sources. Genere un output dans `outputs/pending/` si la reponse enrichit le wiki.
 - `/verifier` — Audit de coherence : liens, orphelins, index. Rapport dans `outputs/`.
 
 ## Template article wiki
@@ -54,3 +54,25 @@ Liste plate alphabetique. Une entree par article :
 - Toujours tracer les sources dans le front-matter `sources:`
 - Mettre a jour les backlinks `## Related` dans les articles lies
 - Mettre a jour `wiki/_index.md` apres chaque compilation
+
+## Outputs et feedback loop
+
+Le wiki s'enrichit via deux canaux :
+
+- **Sources brutes** (`raw/pending/` → `raw/indexed/`) : information externe, synthese complete, tracee dans `sources:`.
+- **Outputs** (`outputs/pending/` → `outputs/indexed/`) : reponses generees par `/demander`, extraction selective uniquement, jamais traces dans `sources:`.
+
+### Frontmatter des outputs
+
+~~~yaml
+---
+title: Sujet de la reponse
+type: output
+question: "La question posee"
+created: YYYY-MM-DD
+---
+~~~
+
+### Regle de non-tracabilite
+
+Les outputs ne sont pas des sources primaires. Ne jamais les ajouter dans le champ `sources:` des articles wiki. Cela evite la dilution par re-synthese circulaire.
