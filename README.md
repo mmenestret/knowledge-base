@@ -34,9 +34,9 @@ Les commandes `/compiler`, `/indexer`, `/demander`, `/verifier` sont disponibles
 
 | Commande | Description |
 |----------|-------------|
-| `/compiler [fichier]` | Compile les sources dans `raw/pending/` en articles wiki |
+| `/compiler [fichier]` | Compile les sources et les outputs en articles wiki |
 | `/indexer <url>` | Fetch une URL, la sauve en source, puis compile |
-| `/demander <question>` | Repond en cherchant dans le wiki |
+| `/demander <question>` | Repond en cherchant dans le wiki, genere un output si enrichissant |
 | `/verifier` | Audit de coherence, qualite, et suggestions d'amelioration |
 
 Les commandes fonctionnent aussi en langage naturel (ex: "compile cette source", "c'est quoi le prompt engineering ?").
@@ -49,7 +49,11 @@ Source brute          →  /compiler  →  Articles wiki
 
 URL                   →  /indexer   →  Source + compilation auto
 
-Question              →  /demander  →  Reponse avec citations
+Question              →  /demander  →  Reponse + output
+                                       (outputs/pending/)
+
+Output                →  /compiler  →  Wiki enrichi
+(outputs/pending/)                     (extraction selective)
 
 Maintenance           →  /verifier  →  Rapport dans outputs/
 ```
