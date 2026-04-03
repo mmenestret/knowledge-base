@@ -13,8 +13,21 @@ Question : $ARGUMENTS
 2. Lis les articles wiki qui semblent repondre a la question.
 3. Si les articles wiki ne suffisent pas, cherche dans `raw/indexed/` avec Grep ou en lisant les fichiers pertinents.
 4. Reponds en markdown dans la conversation.
-5. Cite les articles utilises avec des liens relatifs : `[Titre](wiki/fichier.md)`.
-6. Si la reponse est longue ou structuree (tableau, rapport, comparatif), genere un fichier dans `outputs/` en plus de la reponse conversationnelle.
+5. Cite les articles utilises avec des wikilinks : `[[fichier]]`.
+6. Si la reponse est longue ou structuree (tableau, rapport, comparatif), genere aussi un fichier dans `outputs/pending/` (meme si l'etape 7 s'applique).
+7. **Feedback loop** : evalue si ta reponse contient des connexions, syntheses ou insights qui n'existent pas tels quels dans le wiki. Si oui, genere un fichier dans `outputs/pending/` avec le format suivant :
+   - Nom : `YYYY-MM-DD-<slug>.md`
+   - Frontmatter :
+     ```yaml
+     ---
+     title: Sujet de la reponse
+     type: output
+     question: "La question posee"
+     created: YYYY-MM-DD
+     ---
+     ```
+   - Corps : la reponse telle que formulee.
+   - Si la reponse est purement factuelle et n'apporte rien de nouveau par rapport au wiki, ne pas generer de fichier.
 
 ## Regles
 
