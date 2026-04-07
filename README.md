@@ -20,7 +20,7 @@ Ouvrir le dossier dans Claude Code :
 claude
 ```
 
-Les commandes `/compiler`, `/indexer`, `/demander`, `/verifier` sont disponibles immediatement.
+Les commandes `/wiki:compiler`, `/wiki:indexer`, `/wiki:demander`, `/wiki:verifier` sont disponibles immediatement.
 
 ## Configuration Obsidian
 
@@ -34,26 +34,26 @@ Les commandes `/compiler`, `/indexer`, `/demander`, `/verifier` sont disponibles
 
 | Commande | Description |
 |----------|-------------|
-| `/compiler [fichier]` | Compile les sources et les outputs en articles wiki |
-| `/indexer <url>` | Fetch une URL, la sauve en source, puis compile |
-| `/demander <question>` | Repond en cherchant dans le wiki, genere un output si enrichissant |
-| `/verifier` | Audit de coherence, qualite, et suggestions d'amelioration |
+| `/wiki:compiler [fichier]` | Compile les sources et les outputs en articles wiki |
+| `/wiki:indexer <url>` | Fetch une URL, la sauve en source, puis compile |
+| `/wiki:demander <question>` | Repond en cherchant dans le wiki, genere un output si enrichissant |
+| `/wiki:verifier` | Audit de coherence, qualite, et suggestions d'amelioration |
 
 Les commandes fonctionnent aussi en langage naturel (ex: "compile cette source", "c'est quoi le prompt engineering ?").
 
 ## Workflow
 
 ```
-Source brute          →  /compiler  →  Articles wiki
+Source brute          →  /wiki:compiler  →  Articles wiki
 (raw/pending/)                         (wiki/*.md)
 
-URL                   →  /indexer   →  Source + compilation auto
+URL                   →  /wiki:indexer   →  Source + compilation auto
 
-Question              →  /demander  →  Reponse + output
+Question              →  /wiki:demander  →  Reponse + output
                                        (outputs/pending/)
 
-Output                →  /compiler  →  Wiki enrichi
+Output                →  /wiki:compiler  →  Wiki enrichi
 (outputs/pending/)                     (extraction selective)
 
-Maintenance           →  /verifier  →  Rapport dans outputs/
+Maintenance           →  /wiki:verifier  →  Rapport dans outputs/
 ```

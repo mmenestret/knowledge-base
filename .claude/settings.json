@@ -5,7 +5,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "python3 -c \"import json; print(json.dumps({'systemMessage': 'Knowledge Base — Commandes disponibles:\\n\\n/compiler [fichier] — Compile sources pending + outputs en articles wiki\\n/indexer <url> — Fetch une URL et compile le contenu\\n/demander <question> — Recherche, repond, et genere un output si enrichissant\\n/verifier — Audit de coherence + suggestions'}))\"",
+            "command": "python3 -c \"import json; print(json.dumps({'systemMessage': 'Knowledge Base — Commandes disponibles:\\n\\n/wiki:compiler [fichier] — Compile sources pending + outputs en articles wiki\\n/wiki:indexer <url> — Fetch une URL et compile le contenu\\n/wiki:demander <question> — Recherche, repond, et genere un output si enrichissant\\n/wiki:verifier — Audit de coherence + suggestions'}))\"",
             "once": true
           }
         ]

@@ -4,10 +4,10 @@ Ne jamais modifier le contenu d'un fichier dans `raw/`. Seulement deplacer de `p
 
 ## Commandes
 
-- `/compiler [fichier]` — Compile les sources pending et les outputs en articles wiki. Sans argument, traite `raw/pending/` puis `outputs/pending/`.
-- `/indexer <url>` — Fetch une URL, sauve en markdown dans `raw/pending/`, puis compile.
-- `/demander <question>` — Repond en cherchant dans le wiki puis dans les sources. Genere un output dans `outputs/pending/` si la reponse enrichit le wiki.
-- `/verifier` — Audit de coherence : liens, orphelins, index. Rapport dans `outputs/`.
+- `/wiki:compiler [fichier]` — Compile les sources pending et les outputs en articles wiki. Sans argument, traite `raw/pending/` puis `outputs/pending/`.
+- `/wiki:indexer <url>` — Fetch une URL, sauve en markdown dans `raw/pending/`, puis compile.
+- `/wiki:demander <question>` — Repond en cherchant dans le wiki puis dans les sources. Genere un output dans `outputs/pending/` si la reponse enrichit le wiki.
+- `/wiki:verifier` — Audit de coherence : liens, orphelins, index. Rapport dans `outputs/`.
 
 ## Template article wiki
 
@@ -60,7 +60,7 @@ Liste plate alphabetique. Une entree par article :
 Le wiki s'enrichit via deux canaux :
 
 - **Sources brutes** (`raw/pending/` → `raw/indexed/`) : information externe, synthese complete, tracee dans `sources:`.
-- **Outputs** (`outputs/pending/` → `outputs/indexed/`) : reponses generees par `/demander`, extraction selective uniquement, jamais traces dans `sources:`.
+- **Outputs** (`outputs/pending/` → `outputs/indexed/`) : reponses generees par `/wiki:demander`, extraction selective uniquement, jamais traces dans `sources:`.
 
 ### Frontmatter des outputs
 
